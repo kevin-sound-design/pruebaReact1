@@ -1,0 +1,56 @@
+nav {
+    position: relative;
+    height: 15vh;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(https://www.wallpaperuse.com/wallp/93-934599_m.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    opacity: 0.7; 
+    z-index: -1;
+  }
+  
+nav li{
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+    font-family:cursive;
+}
+nav ul{
+    list-style: none;
+}
+nav form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+body{
+    height: 100vh;
+    background-color: black;
+}
+.carrusel{
+    height: 25vh;
+}
+.carrusel-item h3, p{
+    color: white;
+}
+main{
+    height: 50vh;
+
+}
+footer{
+    height: 10vh;
+}
