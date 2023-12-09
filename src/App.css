@@ -23,7 +23,7 @@ nav {
   }
   
 nav li{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     font-weight: 600;
     font-family:cursive;
@@ -49,6 +49,7 @@ body{
 }
 main{
     height: 50vh;
+    overflow-y: scroll;
 
 }
 footer{
