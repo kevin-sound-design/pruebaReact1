@@ -1,27 +1,32 @@
-/*function Buscador({colaboradores, setColaboradores, baseColaboradores}){
+import { useState } from "react";
 
-    function filtrarEmpleados(e){
-        e.preventDefault()
-        const inputBuscador = e.target.value;
-        if(inputBuscador===""){
-            setColaboradores(baseColaboradores)
+function Buscador({ dataBuscador }) {
+  const [inputBuscador, setInputBuscador] = useState("");
+  const [dataParaFiltrar, setDataParaFiltrar] = useState(dataBuscador);
 
-        }else{
-            const filtro = colaboradores.filter((colaborador) => {
-                const clavesBusqueda = ["nombre", "correo", "edad", "cargo", "telefono"];
-        
-                return clavesBusqueda.some((clave) =>
-                  colaborador[clave].toLowerCase().includes(inputBuscador.toLowerCase())
-                );
-              });
-            setColaboradores(filtro);
-        }
-        
-    }
+  function filtrarAnimes(e) {
+    const inputValue = e.target.value.toLowerCase();
+    setInputBuscador(inputValue);
 
-    return(
-        <input className="buscador" type="text" placeholder="Busca un colaborador" onChange={filtrarEmpleados}/>
-    )
+    const filtro = dataBuscador.filter((anime) =>
+      anime.title.toLowerCase().includes(inputValue)
+    );
+
+    setDataParaFiltrar(filtro);
+    console.log(dataParaFiltrar)
+    
+  }
+
+  return (
+    <form>
+      <input
+        type="text"
+        placeholder="Buscar anime"
+        value={inputBuscador}
+        onChange={filtrarAnimes}
+      />
+    </form>
+  );
 }
 
-export default Buscador;*/
+export default Buscador;

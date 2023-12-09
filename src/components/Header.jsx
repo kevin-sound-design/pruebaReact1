@@ -1,14 +1,13 @@
-function Header() {
+import Buscador from "./Buscador";
+
+function Header({dataBuscador}) {
   return (
     <>
       <nav>
         <ul>
           <li>Listas de animes</li>
         </ul>
-        <form>
-          <input type="text" placeholder="Buscar anime"/>
-          <input type="submit" value="Buscar"/>
-        </form>
+        <Buscador dataBuscador = {dataBuscador}/>
       </nav>
     </>
   )

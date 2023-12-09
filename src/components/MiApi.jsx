@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import MyCard from "./MyCard";
 
-function MiApi() {
+function MiApi({setDataBuscador}) {
   const [loading, setLoading] = useState(true);
   const [datosApi, setDatosApi] = useState([]);
 
   async function fetchData() {
     try {
-      const data = await fetch("https://api-anime-production-0f6a.up.railway.app/getAllAnime?limit=10&page=1");
+      const data = await fetch("https://api-anime-production-0f6a.up.railway.app/getAllAnime?limit=12&page=1");
       const dataJson = await data.json();
       setDatosApi(dataJson.collection);
+      setDataBuscador(dataJson.collection);
       console.log(datosApi)
     } catch (error) {
       console.log(error)
@@ -28,14 +29,17 @@ function MiApi() {
         <h2>Loading...</h2>
       ) : (
         <main>
-          <MyCard 
-            picture = {datosApi[0].picture}
-            title = {datosApi[0].title}
-            type = {datosApi[0].type}
-            episodes = {datosApi[0].episodes}
-            year = {datosApi[0].animeSeason.year}
-            status = {datosApi[0].status}
-          />
+          {datosApi.map((anime, index) => (
+            <MyCard 
+              key={index + "animePosicion"}
+              picture={anime.picture}
+              title={anime.title}
+              type={anime.type}
+              episodes={anime.episodes}
+              year={anime.animeSeason.year}
+              status={anime.status}
+            />
+          ))}
         </main>
       )}
     </>

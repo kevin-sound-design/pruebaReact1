@@ -51,9 +51,26 @@ body{
 main{
     height: 50vh;
     overflow-y: scroll;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 footer{
     height: 10vh;
 }
-
+.card{
+    align-items: center;
+    background-color: black;
+    border: solid 1px white;
+    color: white;
+}
+.card img{
+    height: 20rem;
+}
+.card .list-group-item{
+    background-color: black;
+    color: white;
+    
+}
