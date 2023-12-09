@@ -42,7 +42,8 @@ body{
     background-color: black;
 }
 .carrusel{
-    height: 25vh;
+    height: 100%;
+
 }
 .carrusel-item h3, p{
     color: white;
@@ -55,3 +56,4 @@ main{
 footer{
     height: 10vh;
 }
+
