@@ -1,13 +1,13 @@
 import Buscador from "./Buscador";
 
-function Header({dataBuscador}) {
+function Header({setDatosApi, datosApi, arrayOriginal}) {
   return (
     <>
       <nav>
         <ul>
           <li>Listas de animes</li>
         </ul>
-        <Buscador dataBuscador = {dataBuscador}/>
+        <Buscador setDatosApi = {setDatosApi} datosApi = {datosApi} arrayOriginal = {arrayOriginal}/>
       </nav>
     </>
   )

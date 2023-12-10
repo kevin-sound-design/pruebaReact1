@@ -6,12 +6,13 @@ import Footer from './components/footer'
 import MiApi from './components/MiApi'
 
 function App() {
-  const [dataBuscador, setDataBuscador] = useState([])
+  const [datosApi, setDatosApi] = useState([]);
+  const [arrayOriginal, setArrayOriginal] = useState([])
   return (
     <>
-      <Header dataBuscador = {dataBuscador} />
+      <Header setDatosApi = {setDatosApi} datosApi = {datosApi} arrayOriginal = {arrayOriginal} />
       <Carrusel />
-      <MiApi setDataBuscador = {setDataBuscador} />
+      <MiApi setDatosApi = {setDatosApi} datosApi = {datosApi} setArrayOriginal = {setArrayOriginal} />
       <Footer />
     </>
   )
