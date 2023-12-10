@@ -14,7 +14,6 @@ function Buscador({ setDatosApi, datosApi, arrayOriginal }) {
                 anime.title.toLowerCase().includes(inputValue)
             );
             setDatosApi(filtro);
-            console.log(filtro)
         }
     }
 
